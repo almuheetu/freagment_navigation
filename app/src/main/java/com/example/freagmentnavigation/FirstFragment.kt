@@ -10,12 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.freagmentnavigation.databinding.FragmentFirstBinding
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
 class FirstFragment : Fragment() {
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private lateinit var binding: FragmentFirstBinding
 
     override fun onCreateView(
@@ -25,8 +20,6 @@ class FirstFragment : Fragment() {
     ): View {
         binding = FragmentFirstBinding.inflate(inflater, container, false)
         binding.btnNext.setOnClickListener {
-            // findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-
             val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment("Hello")
             findNavController().navigate(action)
         }
@@ -80,11 +73,6 @@ class FirstFragment : Fragment() {
         val recyclerView: RecyclerView = binding.contractsRecyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = contactAdapter
-
-//        binding.btnNext.setOnClickListener {
-//            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment("Hello")
-//            findNavController().navigate(action)
-//        }
     }
 
     override fun onDestroyView() {

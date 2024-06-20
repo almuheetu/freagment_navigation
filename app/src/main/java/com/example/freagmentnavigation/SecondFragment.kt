@@ -10,18 +10,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.freagmentnavigation.databinding.FragmentSecondBinding
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class SecondFragment : Fragment() {
     private lateinit var binding: FragmentSecondBinding
 
-    // val args: SecondFragmentArgs by navArgs()
     val args: SecondFragmentArgs by navArgs()
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    // private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,7 +31,6 @@ class SecondFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         Toast.makeText(requireContext(), "${args.data}", Toast.LENGTH_SHORT).show()
         binding.buttonSecond.setOnClickListener {
-            // findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
             findNavController().popBackStack()
         }
     }
