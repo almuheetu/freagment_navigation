@@ -24,6 +24,12 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentFirstBinding.inflate(inflater, container, false)
+        binding.btnNext.setOnClickListener {
+            // findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+
+            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment("Hello")
+            findNavController().navigate(action)
+        }
         return binding.root
     }
 
@@ -75,9 +81,10 @@ class FirstFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = contactAdapter
 
-        binding.btnNext.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        }
+//        binding.btnNext.setOnClickListener {
+//            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment("Hello")
+//            findNavController().navigate(action)
+//        }
     }
 
     override fun onDestroyView() {
