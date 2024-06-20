@@ -21,12 +21,10 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-
-//        binding.fab.setOnClickListener { view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                .setAction("Action", null)
-//                .setAnchorView(R.id.fab).show()
+//        val firstFragment = FirstFragment()
+//        supportFragmentManager.beginTransaction().apply {
+//            replace(R.id.flFragment, firstFragment)
+//            commit()
 //        }
     }
 

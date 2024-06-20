@@ -46,4 +46,5 @@
     <string name="user_icon">User Icon</string>
     <string name="name">Jhon Doe</string>
     <string name="phone">+9408973403</string>
+    <string name="nextbtn">Next</string>
 </resources>
