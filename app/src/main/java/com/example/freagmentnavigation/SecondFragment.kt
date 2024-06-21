@@ -31,8 +31,8 @@ class SecondFragment : Fragment() {
         Toast.makeText(
             requireContext(),
 //            "${arguments?.getString("passing data")}" +
-            "${arguments?.getBoolean("passing boolean")}" +
-                "${arguments?.getFloat("passing float")}",
+            "${arguments?.getBoolean("passing_boolean")}",
+//            "${arguments?.get("passing_array")}",
 //                "${arguments?.getInt("passing int")}",
             Toast.LENGTH_SHORT,
         ).show()

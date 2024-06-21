@@ -23,8 +23,9 @@ class FirstFragment : Fragment() {
         binding.btnNext.setOnClickListener {
             val bundle =
 //                bundleOf("passing int" to 123)
-//                bundleOf("passing boolean" to false)
-                bundleOf("passing float" to 1.23f)
+                bundleOf("passing_boolean" to false)
+//                bundleOf("passing float" to 1.23f)
+            bundleOf("passing_array" to arrayOf(1, 2, 3, 4, 5))
 //                bundleOf("passing data" to "passing data")
 
             findNavController().navigate(R.id.SecondFragment, bundle)
