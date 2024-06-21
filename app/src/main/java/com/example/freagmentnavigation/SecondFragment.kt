@@ -30,22 +30,10 @@ class SecondFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         Toast.makeText(
             requireContext(),
-            "${
-                arguments?.getString(
-                    "passing data",
-                )
-            }" + "${
-                arguments?.getInt(
-                    "passing int",
-                )
-            }" + "${arguments?.getBoolean(
-                "passing boolean",
-            )
-            }" +
-                "${arguments?.getStringArray(
-                    "passing array",
-                )
-                }",
+//            "${arguments?.getString("passing data")}" +
+            "${arguments?.getBoolean("passing boolean")}" +
+                "${arguments?.getFloat("passing float")}",
+//                "${arguments?.getInt("passing int")}",
             Toast.LENGTH_SHORT,
         ).show()
         binding.buttonSecond.setOnClickListener {

@@ -22,12 +22,11 @@ class FirstFragment : Fragment() {
         binding = FragmentFirstBinding.inflate(inflater, container, false)
         binding.btnNext.setOnClickListener {
             val bundle =
-                bundleOf(
-                    "passing_data" to "passing data",
-                    "passing_int" to 123,
-                    "passing_boolean" to true,
-                    "passing_array" to arrayOf("a", "b", "c"),
-                )
+//                bundleOf("passing int" to 123)
+//                bundleOf("passing boolean" to false)
+                bundleOf("passing float" to 1.23f)
+//                bundleOf("passing data" to "passing data")
+
             findNavController().navigate(R.id.SecondFragment, bundle)
         }
         return binding.root
