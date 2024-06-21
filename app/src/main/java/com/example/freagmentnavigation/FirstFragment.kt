@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,8 +21,14 @@ class FirstFragment : Fragment() {
     ): View {
         binding = FragmentFirstBinding.inflate(inflater, container, false)
         binding.btnNext.setOnClickListener {
-            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment("Hello")
-            findNavController().navigate(action)
+            val bundle =
+                bundleOf(
+                    "passing_data" to "passing data",
+                    "passing_int" to 123,
+                    "passing_boolean" to true,
+                    "passing_array" to arrayOf("a", "b", "c"),
+                )
+            findNavController().navigate(R.id.SecondFragment, bundle)
         }
         return binding.root
     }

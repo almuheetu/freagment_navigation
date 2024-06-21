@@ -7,13 +7,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.example.freagmentnavigation.databinding.FragmentSecondBinding
 
 class SecondFragment : Fragment() {
     private lateinit var binding: FragmentSecondBinding
 
-    val args: SecondFragmentArgs by navArgs()
+    // val args: SecondFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,7 +28,26 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?,
     ) {
         super.onViewCreated(view, savedInstanceState)
-        Toast.makeText(requireContext(), "${args.data}", Toast.LENGTH_SHORT).show()
+        Toast.makeText(
+            requireContext(),
+            "${
+                arguments?.getString(
+                    "passing data",
+                )
+            }" + "${
+                arguments?.getInt(
+                    "passing int",
+                )
+            }" + "${arguments?.getBoolean(
+                "passing boolean",
+            )
+            }" +
+                "${arguments?.getStringArray(
+                    "passing array",
+                )
+                }",
+            Toast.LENGTH_SHORT,
+        ).show()
         binding.buttonSecond.setOnClickListener {
             findNavController().popBackStack()
         }
