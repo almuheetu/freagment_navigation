@@ -32,7 +32,7 @@ class SecondFragment : Fragment() {
             requireContext(),
             "${arguments?.getString("passing_string")}" +
                 "${arguments?.getBoolean("passing_boolean")}" +
-//            "${arguments?.get("passing_array")}",
+                "${arguments?.getCharArray("passing_array")}" +
                 "${arguments?.getInt("passing_int")}",
             Toast.LENGTH_SHORT,
         ).show()

@@ -23,9 +23,10 @@ class FirstFragment : Fragment() {
         binding.btnNext.setOnClickListener {
             val bundle =
                 bundleOf(
-                    "passing_int" to 123,
+                    "passing_int" to 567,
                     "passing_boolean" to true,
                     "passing_string" to "Hello World",
+                    "passing_array" to arrayOf(1, 2, 3, 4, 5),
                 )
 
 //                bundleOf("passing float" to 1.23f)
