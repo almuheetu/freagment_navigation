@@ -26,7 +26,8 @@ class FirstFragment : Fragment() {
                     "passing_int" to 567,
                     "passing_boolean" to true,
                     "passing_string" to "Hello World",
-                    "passing_array" to arrayOf(1, 2, 3, 4, 5),
+//                    "passing_array" to arrayOf(1, 2, 3, 4, 5),
+                    "passing_float" to 1.23f,
                 )
 
 //                bundleOf("passing float" to 1.23f)
