@@ -28,15 +28,16 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?,
     ) {
         super.onViewCreated(view, savedInstanceState)
-      /*  Toast.makeText(
-            requireContext(),
-            "${arguments?.getString("passing_string")}" +
-                { arguments?.getIntArray("int_array").toString() } +
-                "${arguments?.getFloat("passing_float")}" +
-                "${arguments?.getBoolean("passing_boolean")}" +
-                "${arguments?.getInt("passing_int")}",
-            Toast.LENGTH_SHORT,
-        ).show()*/
+//        Toast.makeText(
+//            requireContext(),
+//            "${arguments?.getString("passing_string")}" +
+//                "${ arguments?.getIntArray("passing_array")}" +
+//                "${arguments?.getFloat("passing_float")}" +
+//                "${arguments?.getBoolean("passing_boolean")}" +
+//                "${arguments?.getInt("passing_int")}",
+//            Toast.LENGTH_SHORT,
+//        ).show()
+
         val bundle = arguments?.getIntArray("passing_array")
         Toast.makeText(requireContext(), bundle?.toList().toString(), Toast.LENGTH_SHORT).show()
         binding.buttonSecond.setOnClickListener {
