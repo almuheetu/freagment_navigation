@@ -28,15 +28,17 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?,
     ) {
         super.onViewCreated(view, savedInstanceState)
-        Toast.makeText(
+      /*  Toast.makeText(
             requireContext(),
             "${arguments?.getString("passing_string")}" +
-//                "${arguments?.getCharArray("passing_array")}" +
+                { arguments?.getIntArray("int_array").toString() } +
                 "${arguments?.getFloat("passing_float")}" +
                 "${arguments?.getBoolean("passing_boolean")}" +
                 "${arguments?.getInt("passing_int")}",
             Toast.LENGTH_SHORT,
-        ).show()
+        ).show()*/
+        val bundle = arguments?.getIntArray("passing_array")
+        Toast.makeText(requireContext(), bundle?.toList().toString(), Toast.LENGTH_SHORT).show()
         binding.buttonSecond.setOnClickListener {
             findNavController().popBackStack()
         }
