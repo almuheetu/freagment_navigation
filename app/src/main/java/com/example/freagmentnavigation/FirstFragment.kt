@@ -26,13 +26,9 @@ class FirstFragment : Fragment() {
                     "passing_int" to 567,
                     "passing_boolean" to true,
                     "passing_string" to "Hello World",
-                    "passing_array" to intArrayOf(1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15),
+                    "passing_array" to intArrayOf(13, 14, 15),
                     "passing_float" to 1.23f,
                 )
-
-//                bundleOf("passing float" to 1.23f)
-//            bundleOf("passing_array" to arrayOf(1, 2, 3, 4, 5))
-//                bundleOf("passing data" to "passing data")
 
             findNavController().navigate(R.id.SecondFragment, bundle)
         }
