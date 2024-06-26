@@ -80,7 +80,7 @@ class FirstFragment : Fragment() {
         val contactAdapter = ContactAdapter(dataset)
 
         val recyclerView: RecyclerView = binding.contractsRecyclerView
-        recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = contactAdapter
     }
 
