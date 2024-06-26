@@ -80,11 +80,8 @@ class FirstFragment : Fragment() {
         val contactAdapter = ContactAdapter(dataset)
 
         val recyclerView: RecyclerView = binding.contractsRecyclerView
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         recyclerView.adapter = contactAdapter
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-    }
 }

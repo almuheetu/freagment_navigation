@@ -25,14 +25,5 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
 
-<!--        <argument-->
-<!--            android:name="passingString"-->
-<!--            app:argType="string" />-->
-<!--        <argument-->
-<!--            android:name="passingBoolean"-->
-<!--            app:argType="boolean" />-->
-<!--        <argument-->
-<!--            android:name="passingInt"-->
-<!--            app:argType="integer" />-->
     </fragment>
 </navigation>

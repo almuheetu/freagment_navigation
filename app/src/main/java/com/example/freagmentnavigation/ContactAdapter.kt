@@ -1,5 +1,6 @@
 package com.example.freagmentnavigation
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,6 +25,8 @@ class ContactAdapter(private val dataSet: Array<String>) :
             LayoutInflater.from(viewGroup.context)
                 .inflate(R.layout.contract_layout, viewGroup, false)
 
+        Log.d("Log404", "Created")
+
         return ViewHolder(view)
     }
 
@@ -31,6 +34,8 @@ class ContactAdapter(private val dataSet: Array<String>) :
         viewHolder: ViewHolder,
         position: Int,
     ) {
+        Log.d("Log404", "binding")
+
         viewHolder.textView.text = dataSet[position]
     }
 
