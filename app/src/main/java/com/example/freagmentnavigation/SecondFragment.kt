@@ -1,5 +1,6 @@
 package com.example.freagmentnavigation
 
+import User
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -21,20 +22,23 @@ class SecondFragment : Fragment() {
         return binding.root
     }
 
+
     override fun onViewCreated(
         view: View,
         savedInstanceState: Bundle?,
     ) {
         super.onViewCreated(view, savedInstanceState)
-        Toast.makeText(
-            requireContext(),
-            "${arguments?.getString("passing_string")}" +
-                "${arguments?.getFloat("passing_float")}" +
-                "${arguments?.getBoolean("passing_boolean")}" +
-                arguments?.getIntArray("passing_array")?.toList().toString() +
-                "${arguments?.getInt("passing_int")}",
-            Toast.LENGTH_SHORT,
-        ).show()
+        intent.getSerializableExtra("user")
+
+//        Toast.makeText(
+//            requireContext(),
+//            "${arguments?.getString("passing_string")}" +
+//                "${arguments?.getFloat("passing_float")}" +
+//                "${arguments?.getBoolean("passing_boolean")}" +
+//                arguments?.getIntArray("passing_array")?.toList().toString() +
+//                "${arguments?.getInt("passing_int")}",
+//            Toast.LENGTH_SHORT,
+//        ).show()
     }
 
 //    fun onCreate() {
@@ -42,32 +46,4 @@ class SecondFragment : Fragment() {
 //        Toast.makeText(requireContext(), "onCreate", Toast.LENGTH_SHORT).show()
 //    }
 
-    override fun onStart() {
-        super.onStart()
-        Log.d("log404", "onStart: ")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d("log404", "onResume: ")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d("log404", "onPause: ")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d("log404", "onStop: ")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("log404", "onDestroy: ")
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-    }
 }

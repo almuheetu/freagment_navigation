@@ -1,6 +1,7 @@
 package com.example.freagmentnavigation
 
 import User
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,7 @@ import com.example.freagmentnavigation.databinding.FragmentFirstBinding
 
 open class FirstFragment : Fragment() {
     private lateinit var binding: FragmentFirstBinding
+    private lateinit var _binding: FragmentFirstBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,20 +23,27 @@ open class FirstFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentFirstBinding.inflate(inflater, container, false)
-        binding.btnNext.setOnClickListener {
-            val bundle =
-                bundleOf(
-                    "passing_int" to 567,
-                    "passing_boolean" to true,
-                    "passing_string" to "Hello World",
-                    "passing_array" to intArrayOf(13, 14, 15),
-                    "passing_float" to 1.23f,
-                )
+        binding.contractsRecyclerView.setOnClickListener {
 
-            findNavController().navigate(R.id.SecondFragment, bundle)
+            val intent = Intent(this, SecondFragment::class.java)
+            val user = User("name", "phone", "email", "address")
+            intent.putExtra("user", user)
+            startActivity(intent)
+      
+//            val bundle =
+//                bundleOf(
+//                    "passing_int" to 346,
+//                    "passing_boolean" to true,
+//                    "passing_string" to "Hello World",
+//                    "passing_array" to intArrayOf(13, 14, 15),
+//                    "passing_float" to 1.23f,
+//                )
+////
+//            findNavController().navigate(R.id.SecondFragment, bundle)
         }
         return binding.root
     }
+
 
     override fun onViewCreated(
         view: View,
