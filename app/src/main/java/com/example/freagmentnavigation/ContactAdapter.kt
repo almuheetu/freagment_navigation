@@ -1,5 +1,6 @@
 package com.example.freagmentnavigation
 
+import User
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ContactAdapter(private val dataSet: Array<String>) :
+class ContactAdapter(private val dataSet: ArrayList<User>) :
     RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView
@@ -36,7 +37,7 @@ class ContactAdapter(private val dataSet: Array<String>) :
     ) {
         Log.d("Log404", "binding")
 
-        viewHolder.textView.text = dataSet[position]
+        viewHolder.textView.text = dataSet[position].toString()
     }
 
     override fun getItemCount() = dataSet.size
