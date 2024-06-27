@@ -16,6 +16,12 @@ class ContactAdapter(private val dataSet: ArrayList<User>) :
         init {
             textView = view.findViewById(R.id.tv_name_id)
         }
+
+        val textViewInt: TextView
+
+        init {
+            textViewInt = view.findViewById(R.id.tv_number_id)
+        }
     }
 
     override fun onCreateViewHolder(
@@ -37,7 +43,8 @@ class ContactAdapter(private val dataSet: ArrayList<User>) :
     ) {
         Log.d("Log404", "binding")
 
-        viewHolder.textView.text = dataSet[position].toString()
+        viewHolder.textView.text = dataSet[position].name
+        viewHolder.textViewInt.text = dataSet[position].phoneNumber
     }
 
     override fun getItemCount() = dataSet.size
