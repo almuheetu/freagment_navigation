@@ -1,5 +1,6 @@
 package com.example.freagmentnavigation
 
+import User
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.freagmentnavigation.databinding.FragmentFirstBinding
 
-class FirstFragment : Fragment() {
+open class FirstFragment : Fragment() {
     private lateinit var binding: FragmentFirstBinding
 
     override fun onCreateView(
@@ -43,7 +44,35 @@ class FirstFragment : Fragment() {
 
         val dataset =
             arrayOf(
-                "Rohim",
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
+                User(name = "Shihab", number = 1789803342, email = "shihab@gmail.com", address = "Rajshahi"),
                 "Korim",
                 "Josim",
                 "Shihab",
