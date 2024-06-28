@@ -17,7 +17,6 @@ import com.example.freagmentnavigation.databinding.FragmentSecondBinding
 
 open class FirstFragment : Fragment(), ContactAdapter.ItemClickListener {
     private lateinit var binding: FragmentFirstBinding
-//    private lateinit var _binding: FragmentSecondBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,22 +43,12 @@ open class FirstFragment : Fragment(), ContactAdapter.ItemClickListener {
 
     override fun onItemClick(user: User) {
         val bundle =
-                bundleOf(
-                    "passing_userName" to user.name,
-                    "passing_userNumber" to user.phoneNumber,
-                    "passing_userEmail" to user.email,
-                    "passing_Address" to user.address
-
-                )
-
-
-
-
-        Toast.makeText(requireContext(), "${user.address}", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.SecondFragment, bundle)
-
+            bundleOf(
+                "passing_userName" to user.name,
+                "passing_userNumber" to user.phoneNumber,
+                "passing_userEmail" to user.email,
+                "passing_Address" to user.address
+            )
+        findNavController().navigate(R.id.SecondFragment, bundle)
     }
-
-
-
 }

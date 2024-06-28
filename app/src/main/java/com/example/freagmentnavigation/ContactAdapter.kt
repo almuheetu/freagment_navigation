@@ -8,7 +8,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ContactAdapter(private val dataSet: ArrayList<User>, private val listener: ItemClickListener) :
+class ContactAdapter(
+    private val dataSet: ArrayList<User>,
+    private val listener: ItemClickListener
+) :
     RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textViewName: TextView
@@ -51,8 +54,6 @@ class ContactAdapter(private val dataSet: ArrayList<User>, private val listener:
         viewHolder.textViewName.setOnClickListener {
             listener.onItemClick(dataSet[position])
         }
-
-
     }
 
     override fun getItemCount() = dataSet.size
