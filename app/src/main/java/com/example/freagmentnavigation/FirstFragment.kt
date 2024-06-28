@@ -43,12 +43,8 @@ open class FirstFragment : Fragment(), ContactAdapter.ItemClickListener {
 
     override fun onItemClick(user: User) {
         val bundle =
-            bundleOf(
-                "passing_userName" to user.name,
-                "passing_userNumber" to user.phoneNumber,
-                "passing_userEmail" to user.email,
-                "passing_Address" to user.address
-            )
+            bundleOf()
+        bundle.putSerializable("user", user)
         findNavController().navigate(R.id.SecondFragment, bundle)
     }
 }
