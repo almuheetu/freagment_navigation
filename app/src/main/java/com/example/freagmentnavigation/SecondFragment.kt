@@ -28,17 +28,7 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?,
     ) {
         super.onViewCreated(view, savedInstanceState)
-        intent.getSerializableExtra("user")
-
-//        Toast.makeText(
-//            requireContext(),
-//            "${arguments?.getString("passing_string")}" +
-//                "${arguments?.getFloat("passing_float")}" +
-//                "${arguments?.getBoolean("passing_boolean")}" +
-//                arguments?.getIntArray("passing_array")?.toList().toString() +
-//                "${arguments?.getInt("passing_int")}",
-//            Toast.LENGTH_SHORT,
-//        ).show()
+        arguments?.getBundle("passing_int")
     }
 
 //    fun onCreate() {

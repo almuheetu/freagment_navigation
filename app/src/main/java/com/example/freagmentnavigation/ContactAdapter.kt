@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ContactAdapter(private val dataSet: ArrayList<User>) :
+class ContactAdapter(private val dataSet: ArrayList<User>, private val listener: ItemClickListener) :
     RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView
@@ -22,6 +22,12 @@ class ContactAdapter(private val dataSet: ArrayList<User>) :
         init {
             textViewInt = view.findViewById(R.id.tv_number_id)
         }
+
+//        val textViewSecondFragment: TextView
+//
+//        init {
+//            textViewSecondFragment = view.findViewById(R.id.tv_second_fragment_name_id)
+//        }
     }
 
     override fun onCreateViewHolder(
@@ -45,7 +51,18 @@ class ContactAdapter(private val dataSet: ArrayList<User>) :
 
         viewHolder.textView.text = dataSet[position].name
         viewHolder.textViewInt.text = dataSet[position].phoneNumber
+//        viewHolder.textViewSecondFragment.text = dataSet[position].name
+
+        viewHolder.textView.setOnClickListener {
+            listener.onItemClick(dataSet[position])
+        }
+
+
     }
 
     override fun getItemCount() = dataSet.size
+
+    interface ItemClickListener {
+        fun onItemClick(user: User)
+    }
 }
