@@ -11,23 +11,18 @@ import androidx.recyclerview.widget.RecyclerView
 class ContactAdapter(private val dataSet: ArrayList<User>, private val listener: ItemClickListener) :
     RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView
+        val textViewName: TextView
 
         init {
-            textView = view.findViewById(R.id.tv_name_id)
+            textViewName = view.findViewById(R.id.tv_name_id)
         }
 
-        val textViewInt: TextView
+        val textViewNumber: TextView
 
         init {
-            textViewInt = view.findViewById(R.id.tv_number_id)
+            textViewNumber = view.findViewById(R.id.tv_number_id)
         }
 
-//        val textViewSecondFragment: TextView
-//
-//        init {
-//            textViewSecondFragment = view.findViewById(R.id.tv_second_fragment_name_id)
-//        }
     }
 
     override fun onCreateViewHolder(
@@ -49,11 +44,11 @@ class ContactAdapter(private val dataSet: ArrayList<User>, private val listener:
     ) {
         Log.d("Log404", "binding")
 
-        viewHolder.textView.text = dataSet[position].name
-        viewHolder.textViewInt.text = dataSet[position].phoneNumber
-//        viewHolder.textViewSecondFragment.text = dataSet[position].name
+        viewHolder.textViewName.text = dataSet[position].name
+        viewHolder.textViewNumber.text = dataSet[position].phoneNumber
 
-        viewHolder.textView.setOnClickListener {
+
+        viewHolder.textViewName.setOnClickListener {
             listener.onItemClick(dataSet[position])
         }
 

@@ -45,11 +45,12 @@
     </string>
     <string name="user_icon">User Icon</string>
     <string name="name">Jhon Doe</string>
-    <string name="phone">+9408973403</string>
+    <string name="phone">01789803342</string>
     <string name="nextbtn">Next</string>
     <string name="username">User Name</string>
     <string name="userphone">User Phone Number</string>
     <string name="second_fragment_name">name\n</string>
     <string name="email">jhon@gmail.com</string>
     <string name="address">India</string>
+    <string name="almuheetu_shihab">Almuheetu Shihab</string>
 </resources>

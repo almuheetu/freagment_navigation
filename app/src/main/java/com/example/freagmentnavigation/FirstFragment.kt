@@ -25,16 +25,6 @@ open class FirstFragment : Fragment(), ContactAdapter.ItemClickListener {
         savedInstanceState: Bundle?,
     ): View {
         binding = FragmentFirstBinding.inflate(inflater, container, false)
-//        _binding = FragmentSecondBinding.inflate(inflater, container, false)
-        binding.contractsRecyclerView.setOnClickListener {
-            val user = User("name", "phone", "email", "address")
-            val bundle =
-                bundleOf(
-                    "passing_int" to user,
-                )
-
-            findNavController().navigate(R.id.SecondFragment, bundle)
-        }
         return binding.root
     }
 
@@ -53,10 +43,23 @@ open class FirstFragment : Fragment(), ContactAdapter.ItemClickListener {
     }
 
     override fun onItemClick(user: User) {
-        Toast.makeText(requireContext(), "${user.address} , ${user.email}", Toast.LENGTH_SHORT)
-            .show()
-        findNavController().navigate(R.id.SecondFragment)
+        val bundle =
+                bundleOf(
+                    "passing_userName" to user.name,
+                    "passing_userNumber" to user.phoneNumber,
+                    "passing_userEmail" to user.email,
+                    "passing_Address" to user.address
+
+                )
+
+
+
+
+        Toast.makeText(requireContext(), "${user.address}", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.SecondFragment, bundle)
+
     }
+
 
 
 }
